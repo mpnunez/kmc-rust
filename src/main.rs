@@ -1,4 +1,7 @@
 use rand::Rng;
+use rand_distr::{Exp, Distribution};
+
+
 
 fn main() {
     let mut rng = rand::thread_rng();
@@ -21,5 +24,9 @@ fn main() {
         println!("{t}\t{a}");
     }
 
+
+    let exp = Exp::new(2.0).unwrap();
+    let v = exp.sample(&mut rand::thread_rng());
+    println!("{} is from a Exp(2) distribution", v);
     
 }
