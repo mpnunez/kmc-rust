@@ -1,3 +1,10 @@
+use rand::Rng;
+
 fn main() {
-    println!("Hello, world!");
+    let mut rng = rand::thread_rng();
+
+    for i in 1..11 {
+        println!("Random float: {}", rng.gen::<f64>());
+    }
+    
 }
